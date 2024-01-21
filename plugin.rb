@@ -16,8 +16,8 @@ after_initialize do
 
     Discourse::Application.routes.append do
       get '/admin/plugins/procourse-static-pages' => 'admin/plugins#index', constraints: StaffConstraint.new
-      get '/page/:slug/:id' => 'pc_static_pages/pages#show'
-      get '/page/:id' => 'pc_static_pages/pages#show'
+      get '/p/:slug' => 'pc_static_pages/pages#show'
+      get '/p/:id' => 'pc_static_pages/pages#show'
     end
 
     load File.expand_path('../app/jobs/onceoff/migrate_static_pages_plugin.rb', __FILE__)
