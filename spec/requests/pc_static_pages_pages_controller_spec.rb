@@ -23,7 +23,7 @@ describe PcStaticPages::AdminPagesController do
   describe "GET #show" do
     context "as an ordinary user" do
       it 'allow ordinary users to access' do
-        get "/#{page[:id]}.json"
+        get "/p/#{page[:id]}.json"
         expect(response.status).to eq(200)
       end
     end
